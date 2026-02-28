@@ -26,14 +26,14 @@ col1, col2 = st.columns(2)
 with col1:
    fig1 = px.bar(filtered_df, x='Category', y='Sales', color='Month', barmode='group', 
              title="ยอดขายรายหมวดหมู่",
-             labels={'Sales':'ยอดขาย (บาท)', 'Category':'หมวดหมู่สินค้า'})
+             labels={'Sales':'ยอดขาย (บาท)', 'Category':'หมวดหมู่สินค้า'},template="plotly_dark")
     st.plotly_chart(fig1, use_container_width=True)
 
 with col2:
-    fig2 = px.pie(filtered_df, values='Profit', names='Category', title="สัดส่วนกำไร")
+    fig2 = px.pie(filtered_df, values='Profit', names='Category', title="สัดส่วนกำไร",template="plotly_dark")
     st.plotly_chart(fig2, use_container_width=True)
 
-fig3 = px.line(filtered_df, x='Month', y='Sales', color='Category', title="แนวโน้มยอดขาย")
+fig3 = px.line(filtered_df, x='Month', y='Sales', color='Category', title="แนวโน้มยอดขาย",template="plotly_dark")
 st.plotly_chart(fig3)
 
 if st.checkbox("แสดงตารางข้อมูลดิบ"):
