@@ -2,6 +2,8 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
+st.set_page_config(page_title="Sales Dashboard", layout="wide")
+
 # --- ต้องสร้างข้อมูลก่อนเอาไปใช้ใน Sidebar ---
 data = {
     'Category': ['Electronics', 'Furniture', 'Clothing', 'Electronics', 'Furniture', 'Clothing'],
