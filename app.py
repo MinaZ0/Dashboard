@@ -28,6 +28,9 @@ with col1:
 with col2:
     fig2 = px.pie(filtered_df, values='Profit', names='Category', title="สัดส่วนกำไร")
     st.plotly_chart(fig2, use_container_width=True)
-    
+
 fig3 = px.line(filtered_df, x='Month', y='Sales', color='Category', title="แนวโน้มยอดขาย")
 st.plotly_chart(fig3)
+
+if st.checkbox("แสดงตารางข้อมูลดิบ"):
+    st.dataframe(filtered_df)
