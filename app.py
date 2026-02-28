@@ -20,11 +20,14 @@ selected_cat = st.sidebar.multiselect("เลือกหมวดหมู่:"
 filtered_df = df[df['Category'].isin(selected_cat)]
 
 # --- ส่วนกราฟ ---
-fig1 = px.bar(filtered_df, x='Category', y='Sales', color='Month', barmode='group', title="ยอดขายรายหมวดหมู่")
-st.plotly_chart(fig1)
+col1, col2 = st.columns(2)
+with col1:
+    fig1 = px.bar(filtered_df, x='Category', y='Sales', color='Month', barmode='group', title="ยอดขายรายหมวดหมู่")
+    st.plotly_chart(fig1, use_container_width=True)
 
-fig2 = px.pie(filtered_df, values='Profit', names='Category', title="สัดส่วนกำไร")
-st.plotly_chart(fig2)
-
+with col2:
+    fig2 = px.pie(filtered_df, values='Profit', names='Category', title="สัดส่วนกำไร")
+    st.plotly_chart(fig2, use_container_width=True)
+    
 fig3 = px.line(filtered_df, x='Month', y='Sales', color='Category', title="แนวโน้มยอดขาย")
 st.plotly_chart(fig3)
