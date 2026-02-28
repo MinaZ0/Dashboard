@@ -1,6 +1,7 @@
 import plotly.express as px
 st.title("ระบบวิเคราะห์ข้อมูลการขาย")
 st.write("สรุปภาพรวมยอดขายและกำไรรายเดือน")
+st.plotly_chart(fig1)
 data = {
     'Category': ['Electronics', 'Furniture', 'Clothing', 'Electronics', 'Furniture', 'Clothing'],
     'Sales': [450, 300, 200, 520, 280, 310],
@@ -8,3 +9,4 @@ data = {
     'Month': ['Jan', 'Jan', 'Jan', 'Feb', 'Feb', 'Feb']
 }
 df = pd.DataFrame(data)
+fig1 = px.bar(df, x='Category', y='Sales', title="ยอดขายรายหมวดหมู่")
