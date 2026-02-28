@@ -44,3 +44,11 @@ total_profit = filtered_df['Profit'].sum()
 m1, m2 = st.columns(2)
 m1.metric("ยอดขายรวมทั้งหมด", f"{total_sales:,.0f} บาท")
 m2.metric("กำไรรวมทั้งหมด", f"{total_profit:,.0f} บาท")
+
+csv = filtered_df.to_csv(index=False).encode('utf-8')
+st.download_button(
+    label="📥 ดาวน์โหลดข้อมูลเป็น CSV",
+    data=csv,
+    file_name='sales_data.csv',
+    mime='text/csv',
+)
