@@ -1,3 +1,4 @@
+import plotly.express as px
 st.title("ระบบวิเคราะห์ข้อมูลการขาย")
 st.write("สรุปภาพรวมยอดขายและกำไรรายเดือน")
 data = {
