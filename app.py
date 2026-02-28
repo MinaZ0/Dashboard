@@ -9,4 +9,4 @@ data = {
     'Month': ['Jan', 'Jan', 'Jan', 'Feb', 'Feb', 'Feb']
 }
 df = pd.DataFrame(data)
-fig1 = px.bar(df, x='Category', y='Sales', title="ยอดขายรายหมวดหมู่")
+fig1 = px.bar(df, x='Category', y='Sales', color='Month', barmode='group', title="ยอดขายรายหมวดหมู่")
