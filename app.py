@@ -1,6 +1,7 @@
 import plotly.express as px
 st.title("ระบบวิเคราะห์ข้อมูลการขาย")
 st.write("สรุปภาพรวมยอดขายและกำไรรายเดือน")
+st.sidebar.header("ตัวเลือกข้อมูล")
 
 data = {
     'Category': ['Electronics', 'Furniture', 'Clothing', 'Electronics', 'Furniture', 'Clothing'],
@@ -15,3 +16,4 @@ fig2 = px.pie(df, values='Profit', names='Category', title="สัดส่ว�
 st.plotly_chart(fig2)
 fig3 = px.line(df, x='Month', y='Sales', color='Category', title="แนวโน้มยอดขาย")
 st.plotly_chart(fig3)
+
