@@ -12,7 +12,6 @@ data = {
     'Month': ['Jan', 'Jan', 'Jan', 'Feb', 'Feb', 'Feb']
 }
 df = pd.DataFrame(data)
-
 # --- ส่วน UI ---
 st.title("ระบบวิเคราะห์ข้อมูลการขาย")
 st.write("สรุปภาพรวมยอดขายและกำไรรายเดือน")
