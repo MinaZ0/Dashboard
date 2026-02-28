@@ -37,3 +37,10 @@ st.plotly_chart(fig3)
 
 if st.checkbox("แสดงตารางข้อมูลดิบ"):
     st.dataframe(filtered_df)
+    
+total_sales = filtered_df['Sales'].sum()
+total_profit = filtered_df['Profit'].sum()
+
+m1, m2 = st.columns(2)
+m1.metric("ยอดขายรวมทั้งหมด", f"{total_sales:,.0f} บาท")
+m2.metric("กำไรรวมทั้งหมด", f"{total_profit:,.0f} บาท")
